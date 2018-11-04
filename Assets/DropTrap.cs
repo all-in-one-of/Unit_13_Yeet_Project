@@ -6,6 +6,13 @@ public class DropTrap : MonoBehaviour
 {
     private Animator anim;
 
+    private bool _spikeTrapActive;
+    public bool SpikeTrapActive
+    {
+        get { return _spikeTrapActive; }
+        set { _spikeTrapActive = value; }
+    }
+
 	// Use this for initialization
 	void Awake ()
     {

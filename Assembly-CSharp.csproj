@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Door.cs" />
+    <Compile Include="Assets\DropTrap.cs" />
     <Compile Include="Assets\Key.cs" />
     <Compile Include="Assets\KeyChain.cs" />
     <Compile Include="Assets\Spinner.cs" />

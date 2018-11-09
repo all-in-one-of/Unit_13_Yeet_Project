@@ -6,6 +6,8 @@ public class DropTrap : MonoBehaviour
 {
     private Animator anim;
 
+	public float trapTimer = 10f;
+
     private bool _spikeTrapActive;
     public bool SpikeTrapActive
     {
@@ -17,8 +19,9 @@ public class DropTrap : MonoBehaviour
 	void Awake ()
     {
         anim = GetComponent<Animator>();
-        
-	}
+	    StartCoroutine(AutoTrap());
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -28,5 +31,19 @@ public class DropTrap : MonoBehaviour
 
             anim.SetTrigger("Trap");
         }
+	}
+
+	IEnumerator AutoTrap()
+	{
+		float t = 0;
+
+		while (t < trapTimer)
+		{
+			t += Time.fixedDeltaTime;
+			yield return new WaitForFixedUpdate();
+		}
+		
+		anim.SetTrigger("Trap");
+		StartCoroutine(AutoTrap());
 	}
 }

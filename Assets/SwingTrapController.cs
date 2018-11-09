@@ -5,6 +5,10 @@ using UnityEngine;
 public class SwingTrapController : MonoBehaviour
 {
     private HingeJoint hingeControl;
+	
+	public float trapTimer = 10f;
+
+	private float trapCounter = 0f;
 
 	// Use this for initialization
 	void Awake ()
@@ -16,10 +20,15 @@ public class SwingTrapController : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update ()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            hingeControl.useMotor = !hingeControl.useMotor;
-        }
+	{
+		trapCounter += Time.fixedDeltaTime;
+
+		if (trapCounter > trapTimer)
+		{
+			hingeControl.useMotor = !hingeControl.useMotor;
+			trapCounter = 0;
+		}
+
+
 	}
 }

@@ -62,11 +62,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Door.cs" />
+    <Compile Include="Assets\DoorControl.cs" />
     <Compile Include="Assets\DropTrap.cs" />
     <Compile Include="Assets\Key.cs" />
     <Compile Include="Assets\KeyChain.cs" />
+    <Compile Include="Assets\Locomotion.cs" />
     <Compile Include="Assets\Spinner.cs" />
     <Compile Include="Assets\SwingTrapController.cs" />
+    <Compile Include="Assets\Waypoint.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Banks/Documents/Unity Projects/Unit_13_Yeet_Project/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

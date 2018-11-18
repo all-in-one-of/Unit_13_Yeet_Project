@@ -93,36 +93,35 @@ ModelImporter:
     100174: CTRL_r_thumb_top
     100176: L_ARM_HOOK
     100178: l_leg_ikHandle
-    100180: left
-    100182: locator10
-    100184: locator11
-    100186: locator12
-    100188: locator13
-    100190: locator14
-    100192: locator15
-    100194: locator16
-    100196: locator17
-    100198: locator18
-    100200: locator19
-    100202: locator20
-    100204: locator21
-    100206: locator22
-    100208: locator24
-    100210: locator25
-    100212: locator26
-    100214: locator27
-    100216: locator3
-    100218: locator5
-    100220: locator6
-    100222: locator7
-    100224: locator8
-    100226: locator9
-    100228: nurbsCircle28
-    100230: R_ARM_HOOK
-    100232: r_leg_ikHandle
-    100234: ZOMBIE
-    100236: Zombie
-    100238: //RootNode
+    100180: locator10
+    100182: locator11
+    100184: locator12
+    100186: locator13
+    100188: locator14
+    100190: locator15
+    100192: locator16
+    100194: locator17
+    100196: locator18
+    100198: locator19
+    100200: locator20
+    100202: locator21
+    100204: locator22
+    100206: locator24
+    100208: locator25
+    100210: locator26
+    100212: locator27
+    100214: locator3
+    100216: locator5
+    100218: locator6
+    100220: locator7
+    100222: locator8
+    100224: locator9
+    100226: nurbsCircle28
+    100228: R_ARM_HOOK
+    100230: r_leg_ikHandle
+    100232: ZOMBIE
+    100234: Zombie
+    100236: //RootNode
     400000: be_headEnd
     400002: be_jawEnd
     400004: be_l_foot
@@ -213,41 +212,41 @@ ModelImporter:
     400174: CTRL_r_thumb_top
     400176: L_ARM_HOOK
     400178: l_leg_ikHandle
-    400180: left
-    400182: locator10
-    400184: locator11
-    400186: locator12
-    400188: locator13
-    400190: locator14
-    400192: locator15
-    400194: locator16
-    400196: locator17
-    400198: locator18
-    400200: locator19
-    400202: locator20
-    400204: locator21
-    400206: locator22
-    400208: locator24
-    400210: locator25
-    400212: locator26
-    400214: locator27
-    400216: locator3
-    400218: locator5
-    400220: locator6
-    400222: locator7
-    400224: locator8
-    400226: locator9
-    400228: nurbsCircle28
-    400230: R_ARM_HOOK
-    400232: r_leg_ikHandle
-    400234: ZOMBIE
-    400236: Zombie
-    400238: //RootNode
-    2000000: left
+    400180: locator10
+    400182: locator11
+    400184: locator12
+    400186: locator13
+    400188: locator14
+    400190: locator15
+    400192: locator16
+    400194: locator17
+    400196: locator18
+    400198: locator19
+    400200: locator20
+    400202: locator21
+    400204: locator22
+    400206: locator24
+    400208: locator25
+    400210: locator26
+    400212: locator27
+    400214: locator3
+    400216: locator5
+    400218: locator6
+    400220: locator7
+    400222: locator8
+    400224: locator9
+    400226: nurbsCircle28
+    400228: R_ARM_HOOK
+    400230: r_leg_ikHandle
+    400232: ZOMBIE
+    400234: Zombie
+    400236: //RootNode
     2100000: Zombie1
     4300000: Zombie
-    7400000: Idle
+    7400000: Attack
     7400002: Walk
+    7400004: Look
+    7400006: Idle
     9500000: //RootNode
     13700000: Zombie
     2186277476908879412: ImportLogs
@@ -280,10 +279,38 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
-      takeName: Idle
+      name: Attack
+      takeName: Attack
       firstFrame: 1
-      lastFrame: 48
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      firstFrame: 28
+      lastFrame: 50
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -308,10 +335,38 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Walk
-      takeName: Walk
-      firstFrame: 50
-      lastFrame: 74
+      name: Look
+      takeName: Look
+      firstFrame: 102
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 55
+      lastFrame: 101
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

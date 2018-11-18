@@ -14,6 +14,7 @@ public class Locomotion : MonoBehaviour
 
     private float _waitTime = 3f;
     private int _nextPoint = 0;
+    private bool isWaiting = false;
 
 	// Use this for initialization
 	void Awake ()
@@ -24,51 +25,39 @@ public class Locomotion : MonoBehaviour
         _nav.stoppingDistance = stopRad;
 
 
-        _navDestination = InitNav();
-        _nav.isStopped = false;
+        _nav.autoBraking = false;
+
+        GoToNextPoint();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-
-
-        _nav.SetDestination(_navDestination);
-        Debug.Log("Distance to destination: " + _nav.remainingDistance);
-
         _anims.SetFloat("Speed", _nav.velocity.sqrMagnitude);
 
-        if (_nav.remainingDistance < stopRad && !_nav.isStopped)
+        if (!_nav.pathPending && _nav.remainingDistance <1f)
         {
-            _nav.isStopped = !_nav.isStopped;
-            _navDestination = NextWayPoint();
             //StartCoroutine(Pause());
+            GoToNextPoint();
         }
-
-        Debug.Log(_nav.isStopped);
     }
 
-    private Vector3 InitNav()
+
+    void GoToNextPoint()
     {
-        //_nav.isStopped = false;
-        int initPos = 1;
-        //int initPos = Random.Range(0, _wayPoints.Length);
-        return _wayPoints[initPos].transform.position;
+        if (_wayPoints.Length == 0)
+            return;
 
+        _nextPoint = (_nextPoint + 1) % _wayPoints.Length;
+        _nav.destination = _wayPoints[_nextPoint].transform.position;
         
-        
-    }
 
-    private Vector3 NextWayPoint()
-    {
-        
-        _nextPoint++;
-        return _wayPoints[_nextPoint % _wayPoints.Length].transform.position;
-     
     }
+    
 
     IEnumerator Pause()
     {
+        isWaiting = true;
         float t = 0f;
         while (t < _waitTime)
         {
@@ -76,9 +65,10 @@ public class Locomotion : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
 
-        _navDestination = NextWayPoint();
-        //_nav.isStopped = !_nav.isStopped;
-        Debug.Log("Destination is: " + _navDestination);
+        GoToNextPoint();
+        isWaiting = false;
+
+        
         yield return null;
     }
 

@@ -19,7 +19,7 @@ public class DropTrap : MonoBehaviour
 	void Awake ()
     {
         anim = GetComponent<Animator>();
-	    StartCoroutine(AutoTrap());
+	    //StartCoroutine(AutoTrap());
 
     }
 	

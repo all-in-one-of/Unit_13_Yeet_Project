@@ -5,13 +5,18 @@ using UnityEngine.AI;
 
 public class Locomotion : MonoBehaviour
 {
+    //Grabbing component references...
     private NavMeshAgent _nav;
     private Animator _anims;
+    
+    //Defining an array of waypoint gameobjects
     private GameObject[] _wayPoints;
+    
     private Vector3 _navDestination;
 
     public static float stopRad = .5f;
 
+    
     private float _waitTime = 3f;
     private int _nextPoint = 0;
     private bool isWaiting = false;
@@ -21,6 +26,8 @@ public class Locomotion : MonoBehaviour
     {
         _nav = GetComponent<NavMeshAgent>();
         _anims = GetComponentInChildren<Animator>();
+        
+        //Search the scene for anything tagged as "Waypoint" and add it to the array
         _wayPoints = GameObject.FindGameObjectsWithTag("Waypoints");
         _nav.stoppingDistance = stopRad;
 
@@ -33,8 +40,10 @@ public class Locomotion : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        //Lock the anim parameter "Speed" to the magnitude of the velocity vector
         _anims.SetFloat("Speed", _nav.velocity.sqrMagnitude);
 
+        //If the remaining distance to the current waypoint is less than 1f - GoToNextPoint()
         if (!_nav.pathPending && _nav.remainingDistance <1f)
         {
             //StartCoroutine(Pause());
@@ -43,6 +52,7 @@ public class Locomotion : MonoBehaviour
     }
 
 
+    //This function advances the destination to the next waypoint
     void GoToNextPoint()
     {
         if (_wayPoints.Length == 0)

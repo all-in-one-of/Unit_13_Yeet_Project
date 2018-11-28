@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-
+	// Singleton pattern implementation
 	public static DialogManager Instance;
+	
+	
 	public Text uiText;
 	public Text namePlate;
 	public DialogText dialogText;
@@ -19,6 +21,7 @@ public class DialogManager : MonoBehaviour
 	// Use this for initialization
 	void Awake () 
 	{
+		//Init our Singleton Pattern to ensure we can only ever have 1 copy of DialogManager in our scene.
 		if (Instance == null)
 		{
 			Instance = this;
@@ -38,11 +41,16 @@ public class DialogManager : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		
 		if (Input.anyKeyDown && dialogText != null)
 		{
+			// Run the DQ Function on the given dialogText object and display the returned string
+			// in the UI text box
 			DisplayText(dialogText.DQ());
 		}
 
+		
+		// If there is nothing left in the dialogText object (null) stow the dialog box
 		if (dialogText != null)
 		{
 			_anims.SetBool("PopBool", dialogText.hasTextToDisplay);

@@ -55,6 +55,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DialogManager.cs" />
+    <Compile Include="Assets\DialogText.cs" />
     <Compile Include="Assets\Door.cs" />
     <Compile Include="Assets\DoorControl.cs" />
     <Compile Include="Assets\DropTrap.cs" />
